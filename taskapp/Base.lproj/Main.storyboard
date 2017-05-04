@@ -91,13 +91,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaG-G4-Zqa">
-                                <rect key="frame" x="16" y="114" width="35" height="21"/>
+                                <rect key="frame" x="16" y="144.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1eZ-xj-HmV">
-                                <rect key="frame" x="16" y="145" width="343" height="120"/>
+                                <rect key="frame" x="16" y="175.5" width="343" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="psa-vO-aBH"/>
@@ -106,8 +106,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-xd-Vr9">
-                                <rect key="frame" x="39" y="275" width="320" height="120"/>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-xd-Vr9">
+                                <rect key="frame" x="27" y="356" width="320" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1hx-Rr-TWT"/>
                                 </constraints>
@@ -116,7 +116,8 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbz-j7-s9J">
-                                <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                <rect key="frame" x="16" y="104.5" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -124,20 +125,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gbz-j7-s9J" firstAttribute="leading" secondItem="9Lu-zo-FXs" secondAttribute="leadingMargin" id="3dF-tx-8Km"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sdq-xd-Vr9" secondAttribute="trailing" id="3ht-Qq-VpR"/>
-                            <constraint firstItem="Gbz-j7-s9J" firstAttribute="top" secondItem="gE9-zl-DVd" secondAttribute="bottom" constant="10" id="5gu-y7-IM0"/>
                             <constraint firstItem="SaG-G4-Zqa" firstAttribute="leading" secondItem="9Lu-zo-FXs" secondAttribute="leadingMargin" id="6P8-wh-omF"/>
                             <constraint firstItem="82a-Rc-34t" firstAttribute="leading" secondItem="9Lu-zo-FXs" secondAttribute="leadingMargin" id="6Pn-tM-N6h"/>
                             <constraint firstItem="82a-Rc-34t" firstAttribute="top" secondItem="gE9-zl-DVd" secondAttribute="bottom" constant="10" id="DJG-UI-860"/>
+                            <constraint firstItem="Gbz-j7-s9J" firstAttribute="trailing" secondItem="9Lu-zo-FXs" secondAttribute="trailingMargin" id="GA7-Bk-36u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1eZ-xj-HmV" secondAttribute="trailing" id="GBl-VO-jcj"/>
                             <constraint firstItem="sdq-xd-Vr9" firstAttribute="top" secondItem="1eZ-xj-HmV" secondAttribute="bottom" constant="10" id="GSZ-Wu-F1m"/>
                             <constraint firstItem="SaG-G4-Zqa" firstAttribute="top" secondItem="Gbz-j7-s9J" secondAttribute="bottom" constant="10" id="JvD-Pq-eSN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gbz-j7-s9J" secondAttribute="trailing" id="JzN-DC-rhP"/>
+                            <constraint firstItem="Gbz-j7-s9J" firstAttribute="top" secondItem="82a-Rc-34t" secondAttribute="bottom" constant="10" id="fp7-RL-mkm"/>
+                            <constraint firstItem="Gbz-j7-s9J" firstAttribute="leading" secondItem="9Lu-zo-FXs" secondAttribute="leadingMargin" id="mLe-ku-UuK"/>
                             <constraint firstItem="1eZ-xj-HmV" firstAttribute="top" secondItem="SaG-G4-Zqa" secondAttribute="bottom" constant="10" id="oCg-Nb-Xta"/>
                             <constraint firstItem="1eZ-xj-HmV" firstAttribute="leading" secondItem="9Lu-zo-FXs" secondAttribute="leadingMargin" id="tu0-NH-E1A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="1eZ-xj-HmV" id="Ffw-mq-fBc"/>
+                        <outlet property="datePicker" destination="sdq-xd-Vr9" id="6mP-Nc-fN3"/>
+                        <outlet property="titleTextField" destination="Gbz-j7-s9J" id="llT-QV-zf2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MB4-do-XgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
