@@ -74,18 +74,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //検索結果を保持するデータリストの作成
     var searchResults = ""
     
+    
+    
     // 検索処理
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let predicate = NSPredicate(format: "category = %@",  searchBar.text!)
         
         if searchBar.text! != "" {
-             taskArray = try! Realm().objects(Task.self).filter(predicate)
+            taskArray = try! Realm().objects(Task.self).filter(predicate)
              tableView.reloadData()
         } else {
-           taskArray = try! Realm().objects(Task.self).sorted(byProperty: "date", ascending: false)
+            taskArray = try! Realm().objects(Task.self).sorted(byProperty: "date", ascending: false)
            tableView.reloadData()
        }
+    }
+    
+        // 検索処理（文字を入力していない時）
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text! == "" {
+            taskArray = try! Realm().objects(Task.self).sorted(byProperty: "date", ascending: false)
+            tableView.reloadData()
+        }
     }
     
     
